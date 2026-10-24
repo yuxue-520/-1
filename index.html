@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b20">
+<title>给宝子的生日祝福</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100vh; overflow: hidden; display: grid; place-items: center;
+    color: #fff; font-family: "PingFang SC","Microsoft YaHei",sans-serif;
+    background:
+      radial-gradient(ellipse at 50% 42%, rgba(93,36,100,.34), transparent 45%),
+      radial-gradient(ellipse at 15% 15%, rgba(37,65,115,.28), transparent 35%),
+      linear-gradient(160deg, #080b20, #171029 58%, #080b20);
+  }
+  .stars, .stars::before, .stars::after {
+    position: fixed; inset: 0; content: ""; pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 8% 18%, #fff 98%, transparent),
+      radial-gradient(1px 1px at 22% 72%, #f5dfff 98%, transparent),
+      radial-gradient(1px 1px at 78% 16%, #fff 98%, transparent),
+      radial-gradient(1.5px 1.5px at 88% 64%, #fff 98%, transparent),
+      radial-gradient(1px 1px at 63% 83%, #ffd9e9 98%, transparent),
+      radial-gradient(1px 1px at 38% 28%, #fff 98%, transparent),
+      radial-gradient(1px 1px at 15% 48%, #fff 98%, transparent),
+      radial-gradient(1px 1px at 72% 44%, #f5dfff 98%, transparent);
+    opacity: .65; animation: twinkle 4s ease-in-out infinite alternate;
+  }
+  .stars::before { transform: translate(12px, 18px); opacity: .35; animation-delay: -2s; }
+  .stars::after { transform: translate(-17px, -9px); opacity: .3; animation-delay: -1s; }
+  .card { position: relative; z-index: 1; width: min(92vw, 440px); padding: 30px 22px; text-align: center; }
+  .eyebrow { letter-spacing: .38em; font-size: 11px; color: #d8c6e8; opacity: .85; margin-bottom: 24px; }
+  .heart-wrap { height: 205px; display: grid; place-items: center; position: relative; }
+  .halo {
+    position: absolute; width: 170px; height: 170px; border-radius: 50%;
+    background: rgba(255, 58, 113, .12); filter: blur(24px);
+    animation: glow 2.4s ease-in-out infinite;
+  }
+  .heart {
+    position: relative; font-size: 124px; line-height: 1;
+    color: #ff547e; filter: drop-shadow(0 0 18px rgba(255,65,119,.42));
+    transform-origin: center; animation: beat 1.25s ease-in-out infinite;
+    text-shadow: 0 0 35px rgba(255,70,125,.3);
+  }
+  h1 { font-weight: 400; letter-spacing: .18em; font-size: clamp(24px, 6vw, 30px); margin: 18px 0 14px; }
+  .line { width: 48px; height: 1px; background: #d9a9c4; margin: 0 auto 20px; opacity: .75; }
+  .message { font-size: 14px; line-height: 2.1; color: #e6ddeb; letter-spacing: .04em; margin: 0 auto; max-width: 330px; }
+  .sign { margin-top: 27px; font-size: 12px; letter-spacing: .18em; color: #c8b4d3; }
+  .hint { position: fixed; bottom: 18px; left: 0; right: 0; text-align: center; font-size: 10px; letter-spacing: .12em; color: #8f829f; }
+  @keyframes beat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.1); } 30% { transform: scale(1); } 45% { transform: scale(1.06); } }
+  @keyframes glow { 0%,100% { transform: scale(.88); opacity: .6; } 50% { transform: scale(1.13); opacity: 1; } }
+  @keyframes twinkle { from { opacity: .35; } to { opacity: .8; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+</style>
+</head>
+<body>
+  <div class="stars"></div>
+  <main class="card">
+    <div class="eyebrow">A LITTLE WISH FOR YOU</div>
+    <div class="heart-wrap"><div class="halo"></div><div class="heart" aria-label="爱心">♥</div></div>
+    <h1>宝子，生日快乐</h1>
+    <div class="line"></div>
+    <p class="message">
+      从屏幕两端的初识，<br>
+      到后来一起看过的山海。<br>
+      愿新的一岁，清风常伴，喜乐随行；<br>
+      也愿来日方长，我们仍有故事可讲。
+    </p>
+    <div class="sign">山水一程 · 情谊如故</div>
+  </main>
+  <div class="hint">愿你所行皆坦途，所遇皆温柔</div>
+</body>
+</html>
